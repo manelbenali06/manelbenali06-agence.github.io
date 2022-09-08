@@ -1,0 +1,60 @@
+/* ******************** RESET ******************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/* ******************** GLOBAL ******************** */
+
+:root {
+    --color-black: #000000;
+    --color-grey: #888888;
+    --color-white: #FFFFFF;
+}
+
+* {
+    font-weight: lighter;
+}
+
+a {
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--color-grey);
+    }
+
+/* ******************** BASE - FOOTER ******************** */
+
+#copyright {
+    font-size: 0.75em;
+}
+
+/* ******************** HOME - HEADER ******************** */
+
+#home-header #header-img {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+}
+
+    #home-header h1,
+    #home-header h2 {
+        position: absolute;
+        top: 8%;
+        width: 100%;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    #home-header h2 {
+        top: 91%;
+    }

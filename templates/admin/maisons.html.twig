@@ -1,0 +1,47 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}maisons{% endblock %}
+
+{% block body %}
+
+    <h1 class="pb-5">Liste des maisons</h1>
+
+    <table class="table table-bordered table-dark text-center table-hover table-sm">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Surface</th>
+                <th>Pièces</th>
+                <th>Chambres</th>
+                <th>Prix</th>
+                <th>Image 1</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for maison in maisons|reverse %}
+                <tr class="align-middle">
+                    <td>{{ loop.revindex }}</td>
+                    <td>{{ maison.title }}</td>
+                    <td>{{ maison.description|u.truncate(50, '...') }}</td>
+                    <td>{{ maison.surface }}</td>
+                    <td>{{ maison.rooms }}</td>
+                    <td>{{ maison.bedrooms }}</td>
+                    <td>{{ maison.price|number_format(0, ',', ' ') }}</td>
+                    <td><img src="{{ asset('img/maison/') ~ maison.img1 }}" alt=""></td>
+                    <td>
+                        <a href="#"><i class="fas fa-pen-square text-primary"></i></a>
+                        <a href="{{ path('admin_maison_delete', {'id': maison.id}) }}"><i class="fas fa-trash-alt text-danger"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-end my-5">
+        <a href="#" class="btn btn-outline-dark">Ajouter une maison</a>
+    </div>
+
+{% endblock %}
